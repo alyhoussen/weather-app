@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: 'Clash Display'; /* Nom que vous utiliserez dans votre code */
+  src: url('./assets/fonts/ClashDisplay-Regular.otf') format('opentype'); /* Format OpenType */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('./assets/fonts/ClashDisplay-Bold.otf') format('opentype'); /* Variante Bold */
+  font-weight: bold;
+  font-style: normal;
+}
+
+body{
+  font-family: "Clash Display";
+  height: 100%;
+  /* background: linear-gradient( 90deg, rgb(146, 193, 211), rgb(111, 172, 196), rgb(142, 191, 211)) ; */
+}
+.root{
+  background: #374f9c;
+}
+.card{
+  background: #27272770;
+  border: 2px solid #dddddd93;
+}
+
+.header{
+  background: #1b2f6e;
+  /* border-bottom: 2px solid rgba(128, 127, 127, 0.514); */
+}
+.footer{
+  background: #1b2f6e;
+}
+
+.spinner{
+  border: 4px solid rgba(0,0,0,0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border-left-color: yellow;
+  animation: spin 1s infinite;
+}
+/* https://api.open-meteo.com/v1/forecast?latitude=48.8566&longitude=2.3522&hourly=temperature_2m,apparent_temperature,%20weathercode,relative_humidity_2m,windspeed_10m,winddirection_10m&timezone=auto */
+@keyframes spin{
+
+  to{
+    transform: rotate(360deg);
+  }
+}
