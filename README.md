@@ -9,6 +9,6 @@ I implemented <a href="https://ijerymeteo. netlify. app" >IjeryMétéo </a>using
 
 <h3>Want to test localy?</h3>
 
-Just hit \'**npm install**'\ to install the dependancies and \'**npm run dev**'\ to run the development server.
+Just hit '**npm install**' to install the dependancies and '**npm run dev**' to run the development server.
 
 **Let me know if you want to collaborate :)!**
