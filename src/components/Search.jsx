@@ -7,11 +7,11 @@ function Search({styles, getMeteos, setLocation, setPosition}) {
   const [input, setInput] = useState("")
   const getSuggestions = async ()=>{
     try{
-      const response = await fetch(`http://api.geonames.org/searchJSON?name_startsWith=${input}&maxRows=10&username=dhaxdev`)
+      const response = await fetch(`https://nominatim.openstreetmap.org/search?q=${input}&format=json&addressdetails=1&limit=10`)
       const data = await response.json();
       console.log(data)
       alert("Suggestions")
-      setSuggestions(data.geonames) 
+      setSuggestions(data) 
       return true
     }catch(err){
       alert(err.message)
@@ -43,7 +43,7 @@ function Search({styles, getMeteos, setLocation, setPosition}) {
         <h2 className="bg-white  mx-4 mt-1 t-2 text-primary p-2 px-4 rounded-[5px]">  
         {input.lastIndexOf(" ") >= 0 ?
           "No suggestions"
-          : (suggestions && <>{suggestions.map((suggestion,index)=>( <p key={index} className="cursor-pointer" onClick={()=> {handleSuggestionClick(suggestion.lat,suggestion.lng,`${suggestion.name} ${suggestion.countryName}`)}}>{suggestion.name} {suggestion.countryName}</p> ))}</>)
+          : (suggestions && <>{suggestions.map((suggestion,index)=>( <p key={index} className="cursor-pointer" onClick={()=> {handleSuggestionClick(suggestion.lat,suggestion.lon,`${suggestion.display_name.split(",")[0]} ${suggestion.display_name.split(",")[2]}`)}}>{suggestion.display_name.split(",")[0]} ${suggestion.display_name.split(",")[2]}</p> ))}</>)
         }
         </h2>
       }
