@@ -10,8 +10,10 @@ function Search({styles, getMeteos, setLocation, setPosition}) {
       const response = await fetch(`http://api.geonames.org/searchJSON?name_startsWith=${input}&maxRows=10&username=dhaxdev`)
       const data = await response.json();
       console.log(data)
+      alert("Suggestions")
       setSuggestions(data.geonames) 
     }catch(err){
+      alert(err.message)
       console.log(err.message)
     }
   }
@@ -19,6 +21,7 @@ function Search({styles, getMeteos, setLocation, setPosition}) {
     setInput(value);
     console.log("inputChanged")
     if( !(value.lastIndexOf(" ") >= 0)){ 
+      alert("Input was changed again")
       getSuggestions()
     }
   }

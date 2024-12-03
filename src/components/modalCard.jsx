@@ -14,7 +14,7 @@ function ModalCard({ville, meteo, toggle}) {
     const humidity = minMax(meteo.relative_humidity_2m)
     const feels = minMax(meteo.apparent_temperature)
     return (
-        <div className="fixed h-full w-full bg-[#27272770] z-[10] flex items-center justify-center text-white">
+        <div className="fixed h-full w-full bg-[#27272770] z-[10] m-[1rem] flex items-center justify-center text-white">
         <div className="p-[1.5rem] pt-[0.5rem] rounded-[20px] boder-[#dddddd93] border-2 bg-[#27365EE8] xs:w-[350px]">
             <div className="flex justify-end cursor-pointer h-[40px] items-center text-[40px] hover:text-[35px] hover:pr-1"><span onClick={toggle}><BsX /></span></div>
             <div className="flex gap-3 items-center pt-[1rem]">
@@ -26,7 +26,7 @@ function ModalCard({ville, meteo, toggle}) {
             </div>
             <div className='p-[3rem]'>
                 <div className='flex justify-center'>
-                    <div className="flex items-end"><h1 className='text-[80px] leading-[0.8]'>{tmp.max}</h1><span className="text-[25px] text-[#ccc]">/{tmp.min}</span></div>
+                    <div className="flex items-end"><h1 className='text-[80px] leading-[0.8]'>{tmp.max}</h1><p className="text-[25px] text-[#ccc] min-w-[max-content] ">/{tmp.min}</p></div>
                     <p className='font-semibold'>°C</p>
                 </div>
                 <p className='text-center py-[1rem]'>{weather.text}</p>
