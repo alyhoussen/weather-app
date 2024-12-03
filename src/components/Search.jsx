@@ -17,9 +17,6 @@ function Search({styles, getMeteos, setLocation, setPosition}) {
   }
   const handleOnChange = (value)=>{
     setInput(value);
-    if( !(value.lastIndexOf(" ") >= 0)){ 
-      getSuggestions()
-    }
   }
   const handleSuggestionClick = async (lat, lng, ville)=>{
     getMeteos(lat, lng)
