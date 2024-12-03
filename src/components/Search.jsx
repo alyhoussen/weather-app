@@ -9,20 +9,16 @@ function Search({styles, getMeteos, setLocation, setPosition}) {
     try{
       const response = await fetch(`https://nominatim.openstreetmap.org/search?q=${input}&format=json&addressdetails=1&limit=10`)
       const data = await response.json();
-      console.log(data)
-      alert("Suggestions")
       setSuggestions(data) 
-      return true
+      return 1
     }catch(err){
-      alert(err.message)
       console.log(err.message)
     }
   }
   const handleOnChange = (value)=>{
     setInput(value);
-    console.log("inputChanged")
     if( !(value.lastIndexOf(" ") >= 0)){ 
-      alert("Input was changed again")
+      (input.length > 4) && alert("Input was changed again")
       getSuggestions()
     }
   }
@@ -43,7 +39,7 @@ function Search({styles, getMeteos, setLocation, setPosition}) {
         <h2 className="bg-white  mx-4 mt-1 t-2 text-primary p-2 px-4 rounded-[5px]">  
         {input.lastIndexOf(" ") >= 0 ?
           "No suggestions"
-          : (suggestions && <>{suggestions.map((suggestion,index)=>( <p key={index} className="cursor-pointer" onClick={()=> {handleSuggestionClick(suggestion.lat,suggestion.lon,`${suggestion.display_name.split(",")[0]} ${suggestion.display_name.split(",")[2]}`)}}>{suggestion.display_name.split(",")[0]} ${suggestion.display_name.split(",")[2]}</p> ))}</>)
+          : (suggestions && <>{suggestions.map((suggestion,index)=>( <p key={index} className="cursor-pointer" onClick={()=> {handleSuggestionClick(suggestion.lat,suggestion.lon,`${suggestion.name} ${suggestion.address.country}`)}}>{suggestion.name} ${suggestion.address.country}</p> ))}</>)
         }
         </h2>
       }
