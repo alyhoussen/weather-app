@@ -18,7 +18,6 @@ function Search({styles, getMeteos, setLocation, setPosition}) {
   const handleOnChange = (value)=>{
     setInput(value);
     if( !(value.lastIndexOf(" ") >= 0)){ 
-      (input.length > 4) && alert("Input was changed again")
       getSuggestions()
     }
   }
