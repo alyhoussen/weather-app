@@ -12,6 +12,7 @@ function Search({styles, getMeteos, setLocation, setPosition}) {
       console.log(data)
       alert("Suggestions")
       setSuggestions(data.geonames) 
+      return true
     }catch(err){
       alert(err.message)
       console.log(err.message)
