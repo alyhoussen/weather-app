@@ -198,15 +198,15 @@ function App() {
         console.error(err.message)
         setErr(()=>(
           <h1 className="sm:hidden "> 
-            <div className="flex text-[brown] items-center gap-2 justify-center"><MdWarning className="text-[25px]" /><div className="text-[18px]">Failed to get your position.</div></div>
-            <div className="text-center text-[14px]">Make sure to activate your mobile geolocation is activated and <a href="" className="underline text-[blue]">refresh</a>  the page again.</div>
+            <div className="flex text-[#FF7077FF] items-center gap-2 justify-center"><MdWarning className="text-[25px]" /><div className="text-[18px]">Failed to get your position.</div></div>
+            <div className="text-center text-[14px]">Make sure to activate your mobile geolocation is activated and <a href="" className="underline text-[#A4ACFFFF]">refresh</a>  the page again.</div>
           </h1>)
           )
       })
     }
   },[position.isLocal])
 
-  const Loader = ()=> (<div className="flex justify-center card p-[1.5rem] rounded-[20px] xs:min-w-[350px]"><div className="spinner"></div></div>)
+  const Loader = ()=> (<div className="flex justify-center p-[1.5rem] rounded-[20px] xs:min-w-[350px]"><div className="spinner"></div></div>)
 
   return (
     <Suspense fallBack={<Loader/>}>
