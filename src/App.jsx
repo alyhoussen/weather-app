@@ -197,9 +197,9 @@ function App() {
       ,(err)=>{
         console.error(err.message)
         setErr(()=>(
-          <h1 className="sm:hidden "> 
+          <h1 className=""> 
             <div className="flex text-[#FF7077FF] items-center gap-2 justify-center"><MdWarning className="text-[25px]" /><div className="text-[18px]">Failed to get your position.</div></div>
-            <div className="text-center text-[14px]">Make sure to activate your mobile geolocation is activated and <a href="" className="underline text-[#A4ACFFFF]">refresh</a>  the page again.</div>
+            <div className="text-center text-[14px]">Make sure your divice geolocation is activated and <a href="" className="underline text-[#A4ACFFFF]">refresh</a>  the page again.</div>
           </h1>)
           )
       })
