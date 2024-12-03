@@ -38,7 +38,7 @@ function Search({styles, getMeteos, setLocation, setPosition}) {
         <h2 className="bg-white  mx-4 mt-1 t-2 text-primary p-2 px-4 rounded-[5px]">  
         {input.lastIndexOf(" ") >= 0 ?
           "No suggestions"
-          : (suggestions && <>{suggestions.map((suggestion,index)=>( <p key={index} className="cursor-pointer" onClick={()=> {handleSuggestionClick(suggestion.lat,suggestion.lon,`${suggestion.name} ${suggestion.address.country}`)}}>{suggestion.name} ${suggestion.address.country}</p> ))}</>)
+          : (suggestions && <>{suggestions.map((suggestion,index)=>( <p key={index} className="cursor-pointer" onClick={()=> {handleSuggestionClick(suggestion.lat,suggestion.lon,`${suggestion.name} ${suggestion.address.country}`)}}>{suggestion.name} {suggestion.address.country}</p> ))}</>)
         }
         </h2>
       }
