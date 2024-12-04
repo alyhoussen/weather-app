@@ -151,6 +151,7 @@ const arrangeData = (data)=>{
 function App() {
   const [meteos, setMeteos] = useState()
   const [meteo, setMeteo] = useState()
+  const [loading, setLoading] = useState(false)
   const [err, setErr] = useState("")
   const [toggleModal, setToggleModal] = useState({isTrue: false,meteo:{}})
   const [position, setPosition] = useState({lat:0,lon:0,isLocal: true})
@@ -215,10 +216,10 @@ function App() {
         <div className="xs:flex h-[70%] justify-center mt-[5rem] sm:p-[2rem] p-[1rem] gap-4 flex-wrap text-white">
           <div>
             <Search styles= "flex" getMeteos={ fetch7DaysWeather } setLocation={setLocation} setPosition={setPosition} />
-            {!position.isLocal && <h1 className="flex justify-center cursor-pointer p-[2rem]" onClick={()=>{setPosition((prev)=>({...prev,isLocal: true}))}}><span className="bg-white p-2 px-4 text-primary rounded-[5px]">Local weather</span></h1>}
+            {!position.isLocal && <h1 className="flex justify-center cursor-pointer p-[2rem]" onClick={()=>{setLoading(true);setPosition((prev)=>({...prev,isLocal: true}));setLoading(false)}}><span className="bg-white p-2 px-4 text-primary rounded-[5px]">Local weather</span></h1>}
              {!meteo && 
                 err }
-            {meteo?
+            {meteo && !loading?
               <div className="p-[1.5rem] pt-[0.5rem] rounded-[20px] xs:w-[350px]">
                 <CardHead ville={location} meteo={meteo} />
                 <CardCenter meteo={meteo} />
@@ -229,7 +230,7 @@ function App() {
           </div>
           <div className="xs:my-0 my-3">
             <h1 className="text-[16px] font-semibold p-[1rem] pt-0">NEXT DAYS FORECAST</h1>
-            {meteos ?
+            {meteos && !loading ?
               <div>
                 {
                   meteos.map((meteo, index)=> (index>0 && (<DayCard meteo={meteo} key={index} handleClick={()=>{setToggleModal({isTrue:true,meteo: meteo})}} />)))
