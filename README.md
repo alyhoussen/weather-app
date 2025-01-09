@@ -5,7 +5,6 @@ See it <a href="https://ijerymeteo.netlify.app">here</a>
 I implemented <a href="https://ijerymeteo. netlify. app" >IjeryMétéo </a>using React and TailwindCSS for the frontend and making API calls to fetch the data.
 <h3>API mainly used</h3>
 -<b>Open-meteo </b>: For getting weather forecasts. <br/>
--<b>Geonames</b>: For search suggestions.
 
 <h3>Want to test localy?</h3>
 
