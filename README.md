@@ -2,7 +2,7 @@
 <p>This is a Web App that allows you to know the weather by getting your location. It also allows visitors to search for cities and get the weather accordingly.</p>
 See it <a href="https://ijerymeteo.netlify.app">here</a> 
 <h3>How is it made?</h3>
-I implemented <a href="https://ijerymeteo. netlify. app" >IjeryMétéo </a>using React and TailwindCSS for the frontend and making API calls to fetch the data.
+I implemented <a href="https://ijerymeteo.netlify.app" >IjeryMétéo </a>using React and TailwindCSS for the frontend and making API calls to fetch the data.
 <h3>API mainly used</h3>
 -<b>Open-meteo </b>: For getting weather forecasts. <br/>
 
